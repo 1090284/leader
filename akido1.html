@@ -1,7 +1,7 @@
 <html><head><base href="https://kaug.com/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>高醫合氣道社</title>
+<title>高醫領袖社</title>
 <style>
   body {
     font-family: 'Noto Sans TC', sans-serif;
@@ -53,7 +53,7 @@
 </head>
 <body>
   <header>
-    <h1>歡迎來到高醫合氣道社</h1>
+    <h1>歡迎來到高醫領袖社</h1>
   </header>
   <main>
     <div id="chatbox"></div>
@@ -63,13 +63,11 @@
 
   <script>
     const responses = {
-      "社團簡介": "高醫合氣道社是一個致力於推廣合氣道精神和技巧的學生組織。我們歡迎所有對合氣道感興趣的同學加入！",
-      "活動時間": "我們的常規練習時間是每週二和四的晚上6:30到9:30，地點在濟世大樓B2武術教室。",
-      "如何加入": "想要加入我們嗎？太棒了！您可以在每學期初的社團博覽會上報名，或者直接來我們的練習場地詢問。",
-      "合氣道介紹": "合氣道是一種日本武術，強調和平解決衝突，運用對方的力量來化解攻擊。它不只是一種武術，更是一種生活哲學。",
-      "指導老師": "我們的指導老師是黃仁勇老師，他有超過20年的合氣道經驗，目前是五段資格。",
-      "費用": "社費每學期500元，包括道服租借和基本器材使用。新生入社另收1000元制服費。",
-      "聯繫方式": "您可以透過我們的FB粉絲專頁「高醫合氣道社」與我們聯繫，或發送電子郵件至 kmu.aikido@gmail.com。"
+      "社團簡介": "高醫領袖社是由一群對自己有期許與理想的同學們組成的,我們透過領袖禪的培訓,期待未來能成為 社會各界的領袖!。我們歡迎所有對合氣道感興趣的同學加入！",
+      "活動時間": "我們的常規練習時間是每週三的晚上7:00到9:00，地點在N218。",
+      "如何加入": "想要加入我們嗎？太棒了！您可以在每學期初的社團博覽會上報名，或者直接來我們的粉專詢問。",
+      "費用": "社費每學期250元",
+      "聯繫方式": "您可以透過我們的FB粉絲專頁「高醫領袖社」與我們聯繫。"
     };
 
     function sendMessage() {
@@ -78,7 +76,7 @@
       
       chatbox.innerHTML += `<p><strong>您:</strong> ${userInput}</p>`;
       
-      let response = "抱歉，我沒有這個問題的相關資訊。您可以詢問有關社團簡介、活動時間、如何加入、合氣道介紹、指導老師、費用或聯繫方式的問題。";
+      let response = "抱歉，我沒有這個問題的相關資訊。您可以詢問有關社團簡介、活動時間、如何加入、費用或聯繫方式的問題。";
       
       for (const [key, value] of Object.entries(responses)) {
         if (userInput.includes(key)) {
@@ -87,14 +85,14 @@
         }
       }
       
-      chatbox.innerHTML += `<p><strong>高醫合氣道社:</strong> ${response}</p>`;
+      chatbox.innerHTML += `<p><strong>高醫領袖社:</strong> ${response}</p>`;
       
       document.getElementById('userInput').value = '';
       chatbox.scrollTop = chatbox.scrollHeight;
     }
 
     // 初始歡迎訊息
-    document.getElementById('chatbox').innerHTML = "<p><strong>高醫合氣道社:</strong> 歡迎來到高醫合氣道社！有什麼想問的嗎？</p>";
+    document.getElementById('chatbox').innerHTML = "<p><strong>高醫領袖社:</strong> 歡迎來到高醫領袖社！有什麼想問的嗎？</p>";
   </script>
 </body>
 </html>
