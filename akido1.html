@@ -1,0 +1,100 @@
+<html><head><base href="https://kaug.com/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高醫合氣道社</title>
+<style>
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #005CAF;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+  }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  h1 {
+    margin-bottom: 1rem;
+  }
+  #chatbox {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    height: 300px;
+    overflow-y: scroll;
+    margin-bottom: 1rem;
+  }
+  #userInput {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  button {
+    background-color: #005CAF;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: #004A8F;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>歡迎來到高醫合氣道社</h1>
+  </header>
+  <main>
+    <div id="chatbox"></div>
+    <input type="text" id="userInput" placeholder="請輸入您的問題...">
+    <button onclick="sendMessage()">送出</button>
+  </main>
+
+  <script>
+    const responses = {
+      "社團簡介": "高醫合氣道社是一個致力於推廣合氣道精神和技巧的學生組織。我們歡迎所有對合氣道感興趣的同學加入！",
+      "活動時間": "我們的常規練習時間是每週二和四的晚上6:30到9:30，地點在濟世大樓B2武術教室。",
+      "如何加入": "想要加入我們嗎？太棒了！您可以在每學期初的社團博覽會上報名，或者直接來我們的練習場地詢問。",
+      "合氣道介紹": "合氣道是一種日本武術，強調和平解決衝突，運用對方的力量來化解攻擊。它不只是一種武術，更是一種生活哲學。",
+      "指導老師": "我們的指導老師是黃仁勇老師，他有超過20年的合氣道經驗，目前是五段資格。",
+      "費用": "社費每學期500元，包括道服租借和基本器材使用。新生入社另收1000元制服費。",
+      "聯繫方式": "您可以透過我們的FB粉絲專頁「高醫合氣道社」與我們聯繫，或發送電子郵件至 kmu.aikido@gmail.com。"
+    };
+
+    function sendMessage() {
+      const userInput = document.getElementById('userInput').value;
+      const chatbox = document.getElementById('chatbox');
+      
+      chatbox.innerHTML += `<p><strong>您:</strong> ${userInput}</p>`;
+      
+      let response = "抱歉，我沒有這個問題的相關資訊。您可以詢問有關社團簡介、活動時間、如何加入、合氣道介紹、指導老師、費用或聯繫方式的問題。";
+      
+      for (const [key, value] of Object.entries(responses)) {
+        if (userInput.includes(key)) {
+          response = value;
+          break;
+        }
+      }
+      
+      chatbox.innerHTML += `<p><strong>高醫合氣道社:</strong> ${response}</p>`;
+      
+      document.getElementById('userInput').value = '';
+      chatbox.scrollTop = chatbox.scrollHeight;
+    }
+
+    // 初始歡迎訊息
+    document.getElementById('chatbox').innerHTML = "<p><strong>高醫合氣道社:</strong> 歡迎來到高醫合氣道社！有什麼想問的嗎？</p>";
+  </script>
+</body>
+</html>
